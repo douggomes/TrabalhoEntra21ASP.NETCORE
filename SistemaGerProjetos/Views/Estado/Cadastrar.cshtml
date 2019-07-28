@@ -12,12 +12,12 @@
         <input type="hidden" name="id" value="@Model.Id" />
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" value="@Model.Nome" class="form-control" id="nome" placeholder="Digite o nome do estado">
+            <input type="text" name="nomeestado" value="@Model.NomeEstado" class="form-control" id="nome" placeholder="Digite o nome do estado">
             @Html.ValidationMessage("nome")
         </div>
         <div class="form-group">
             <label for="sigla">Sigla</label>
-            <input type="text" name="sigla" value="@Model.Sigla" class="form-control" id="sigla" placeholder="Digite a sigla do estado">
+            <input type="text" name="siglaestado" value="@Model.SiglaEstado" class="form-control" id="sigla" placeholder="Digite a sigla do estado">
             @Html.ValidationMessage("sigla")
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>

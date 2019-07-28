@@ -11,15 +11,11 @@ namespace SistemaGerProjetos.Controllers
 {
     public class CidadeController : Controller
     {
-        List<Estado> estados = new List<Estado>();
-        Estado estado = new Estado();
         private DatabaseContext _db;
 
         public CidadeController(DatabaseContext db)
         {
             _db = db;
-
-            estados.Add(new Estado() {Id = estado.Id, Nome = estado.Nome, Sigla = estado.Sigla });
         }
         //Listar todas as palavras do banco de dados
         public IActionResult Index(int? page)
@@ -39,7 +35,9 @@ namespace SistemaGerProjetos.Controllers
         [HttpGet]
         public IActionResult Cadastrar()
         {
-            ViewBag.Estado = estados;
+            var estadoDb = _db.Estados.ToList();
+
+            ViewBag.Estado = estadoDb;
             return View(new Cidade());
         }
 
@@ -61,6 +59,14 @@ namespace SistemaGerProjetos.Controllers
         public IActionResult Atualizar(int Id)
         {
             Cidade cidade = _db.Cidades.Find(Id);
+            var atualizarPeloId = _db.Cidades.Select(x => new { x.Id, x.NomeEstado }).Where(y => y.Id == Id).ToList();
+
+            ViewBag.AtualizarCidade = atualizarPeloId;
+
+            var estadoDb = _db.Estados.ToList();
+
+            ViewBag.Estado = estadoDb;
+
             return View("Cadastrar", cidade);
         }
 

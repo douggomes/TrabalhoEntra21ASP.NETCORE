@@ -18,7 +18,8 @@ namespace SistemaGerProjetos.Models
         public string Nome { get; set; }
 
         [ForeignKey("IdEstado")]
-        public Estado Estado { get; set; }
+        public string NomeEstado { get; set; }
+        public Estado Estado{ get; set; }
 
         [Required(ErrorMessage = "O campo 'Numero de habitantes' é obrigatório!")]
         [Range(1,99999999, ErrorMessage = "Informe um número maior que 0.")]

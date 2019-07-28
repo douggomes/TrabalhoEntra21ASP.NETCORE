@@ -14,11 +14,11 @@ namespace SistemaGerProjetos.Models
         [Required(ErrorMessage = "O campo 'Nome' é obrigatório!")]
         [StringLength(70, ErrorMessage = "O campo 'Nome' deve conter até 70 caracteres!")]
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos no nome.")]
-        public string Nome { get; set; }
+        public string NomeEstado { get; set; }
 
         [Required(ErrorMessage = "O campo 'Sigla' é obrigatório!")]
         [StringLength(2, ErrorMessage = "O campo 'Sigla' deve conter 2 caracteres!")]
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos na sigla.")]
-        public string Sigla { get; set; }
+        public string SiglaEstado { get; set; }
     }
 }

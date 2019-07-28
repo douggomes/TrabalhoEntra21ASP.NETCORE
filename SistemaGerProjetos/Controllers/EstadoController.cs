@@ -46,7 +46,7 @@ namespace SistemaGerProjetos.Controllers
                 _db.Estados.Add(estado);
                 _db.SaveChanges();
 
-                TempData["Mensagem"] = "O estado '" + estado.Nome + "' foi cadastrado com sucesso!";
+                TempData["Mensagem"] = "O estado '" + estado.NomeEstado + "' foi cadastrado com sucesso!";
                 return RedirectToAction("Index");
             }
             return View(estado);
@@ -67,7 +67,7 @@ namespace SistemaGerProjetos.Controllers
                 _db.Estados.Update(estado);
                 _db.SaveChanges();
 
-                TempData["Mensagem"] = "O estado '" + estado.Nome + "' foi alterado com sucesso!";
+                TempData["Mensagem"] = "O estado '" + estado.NomeEstado + "' foi alterado com sucesso!";
                 return RedirectToAction("Index");
             }
             return View("Cadastrar", estado);
@@ -81,7 +81,7 @@ namespace SistemaGerProjetos.Controllers
             _db.Estados.Remove(estado);
             _db.SaveChanges();
 
-            TempData["Mensagem"] = "O Estado '" + estado.Nome + "' foi removido com sucesso!";
+            TempData["Mensagem"] = "O Estado '" + estado.NomeEstado + "' foi removido com sucesso!";
 
             return RedirectToAction("Index");
         }
