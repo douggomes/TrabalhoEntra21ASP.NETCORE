@@ -1,0 +1,62 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+
+@model X.PagedList.IPagedList<SistemaGerProjetos.Models.Cliente>
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Lista de Clientes";
+}
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Mensagem"]
+    </div>
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" type="text/css" />
+
+<a href="~/clientes/cadastrar" class="btn btn-primary">Cadastrar</a>
+<span><b>Total de Registros:</b>@Model.TotalItemCount</span>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data de Nascimento</th>
+            <th scope="col">Número</th>
+            <th scope="col">Complemento</th>
+            <th scope="col">Logradouro</th>
+            <th scope="col">CEP</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Cpf</td>
+                <td>@cliente.DataNascimento</td>
+                <td>@cliente.Numero</td>
+                <td>@cliente.Complemento</td>
+                <td>@cliente.Logradouro</td>
+                <td>@cliente.Cep</td>
+                <td>
+                    <a href="/clientes/atualizar/@cliente.Id" class="btn btn-primary">Editar</a>
+                    <a href="/clientes/excluir/@cliente.Id" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

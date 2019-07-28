@@ -1,0 +1,51 @@
+﻿@model SistemaGerProjetos.Models.Cliente;
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Cadastro de Clientes";
+}
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" value="@Model.Nome" class="form-control" id="nome" placeholder="Digite o nome do cliente">
+            @Html.ValidationMessage("nome")
+        </div>
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" value="@Model.Cpf" class="form-control" id="cpf" placeholder="Digite o CPF">
+            @Html.ValidationMessage("cpf")
+        </div>
+        <div class="form-group">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input type="text" name="dataNascimento" value="@Model.DataNascimento" class="form-control" id="dataNascimento" placeholder="@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year">
+            @Html.ValidationMessage("dataNascimento")
+        </div>
+        <div class="form-group">
+            <label for="numero">Número</label>
+            <input type="text" name="numero" value="@Model.Numero" class="form-control" id="numero" placeholder="Digite o número">
+            @Html.ValidationMessage("numero")
+        </div>
+        <div class="form-group">
+            <label for="complemento">Complemento</label>
+            <input type="text" name="complemento" value="@Model.Complemento" class="form-control" id="complemento" placeholder="Informe o complemento">
+            @Html.ValidationMessage("complemento")
+        </div>
+        <div class="form-group">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" name="logradouro" value="@Model.Logradouro" class="form-control" id="logradouro" placeholder="Informe o logradouro">
+            @Html.ValidationMessage("logradouro")
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" name="cep" value="@Model.Cep" class="form-control" id="cep" placeholder="Digite o CEP">
+            @Html.ValidationMessage("cep")
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+    @ViewBag.Mensagem
+</div>
