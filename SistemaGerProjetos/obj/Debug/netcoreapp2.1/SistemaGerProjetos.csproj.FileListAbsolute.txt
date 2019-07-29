@@ -58,3 +58,6 @@ C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\
 C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\SistemaGerProjetos.dll
 C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\SistemaGerProjetos.pdb
 C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\SistemaGerProjetos.csproj.CopyComplete
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Login.g.cshtml.cs
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Cadastro.g.cshtml.cs
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\ListaUsuarios.g.cshtml.cs

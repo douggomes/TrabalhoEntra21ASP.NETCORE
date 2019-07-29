@@ -12,6 +12,8 @@ namespace SistemaGerProjetos.Database
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {

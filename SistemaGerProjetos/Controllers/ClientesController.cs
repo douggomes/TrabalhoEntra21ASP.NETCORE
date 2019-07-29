@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Database;
+using SistemaGerProjetos.Library;
 using SistemaGerProjetos.Models;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using X.PagedList;
 
 namespace SistemaGerProjetos.Controllers
 {
+    [Login]
     public class ClientesController : Controller
     {
         private DatabaseContext _db;

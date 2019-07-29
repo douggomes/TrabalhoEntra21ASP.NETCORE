@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Database;
+using SistemaGerProjetos.Library;
 using SistemaGerProjetos.Models;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using X.PagedList;
 
 namespace SistemaGerProjetos.Controllers
 {
+    [Login]
     public class EstadoController : Controller
     {
         private DatabaseContext _db;
@@ -17,18 +19,16 @@ namespace SistemaGerProjetos.Controllers
         {
             _db = db;
         }
+
         //Listar todas as palavras do banco de dados
         public IActionResult Index(int? page)
         {
-            
             var pageNumber = page ?? 1;
 
             var estados = _db.Estados.ToList();
             var resultadoPaginado = estados.ToPagedList(pageNumber, 5);
 
             return View(resultadoPaginado);
-           
-           
         }
 
         //CRUD - CREATE, READ, UPDATE e DELETE

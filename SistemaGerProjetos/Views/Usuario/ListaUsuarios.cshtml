@@ -1,0 +1,51 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+
+@model X.PagedList.IPagedList<SistemaGerProjetos.Models.Usuario>
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Lista de Usuários";
+}
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Mensagem"]
+    </div>
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" type="text/css" />
+
+<a href="~/usuario/cadastro" class="btn btn-primary">Cadastrar</a>
+<span><b>Total de Registros:</b>@Model.TotalItemCount</span>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Login</th>
+            <th scope="col">Senha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>@usuario.IdUsuario</td>
+                <td>@usuario.NomeUsuario</td>
+                <td>@usuario.Login</td>
+                <td>@usuario.Senha</td>
+                <td>
+                    <a href="/estado/atualizar/@usuario.IdUsuario" class="btn btn-primary">Editar</a>
+                    <a href="/estado/excluir/@usuario.IdUsuario" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

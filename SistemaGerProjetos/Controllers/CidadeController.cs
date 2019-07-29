@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Database;
+using SistemaGerProjetos.Library;
 using SistemaGerProjetos.Models;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using X.PagedList;
 
 namespace SistemaGerProjetos.Controllers
 {
+    [Login]
     public class CidadeController : Controller
     {
         private DatabaseContext _db;
@@ -59,9 +61,10 @@ namespace SistemaGerProjetos.Controllers
         public IActionResult Atualizar(int Id)
         {
             Cidade cidade = _db.Cidades.Find(Id);
-            var atualizarPeloId = _db.Cidades.Select(x => new { x.Id, x.NomeEstado }).Where(y => y.Id == Id).ToList();
 
-            ViewBag.AtualizarCidade = atualizarPeloId;
+            var NomeEstadoBuscaDB = _db.Cidades.Where(y => y.Id == Id).Select(x => new { x.NomeEstado }).ToList();
+
+            ViewBag.NomeEstadoDB = NomeEstadoBuscaDB;
 
             var estadoDb = _db.Estados.ToList();
 

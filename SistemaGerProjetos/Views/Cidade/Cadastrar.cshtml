@@ -22,15 +22,20 @@
             <select name="nomeestado" class="form-control">
                 <option disabled="disabled" selected="selected">Selecione um Estado</option>
 
-                    @foreach (var atualizar in ViewBag.AtualizarCidade)
+                @if (ViewBag.NomeEstadoDB != null)
+                {
+
+                    @foreach (var NomeEstado in ViewBag.NomeEstadoDB)
                     {
-                        <option value="@atualizar" selected>@atualizar</option>
+                        <option value="@NomeEstado" selected>@NomeEstado</option>
                     }
 
-                    @foreach (var estado in ViewBag.Estado)
-                    {
-                        <option value="@estado.NomeEstado">@estado.NomeEstado</option>
-                    }
+                }
+
+                @foreach (var estado in ViewBag.Estado)
+                {
+                    <option value="@estado.NomeEstado">@estado.NomeEstado</option>
+                }
 
             </select>
             @Html.ValidationMessage("estado")
