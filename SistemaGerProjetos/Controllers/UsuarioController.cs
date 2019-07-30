@@ -77,7 +77,7 @@ namespace SistemaGerProjetos.Controllers
 
                     var logar = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                    HttpContext.Session.SetString("Login", "true");
+                    //HttpContext.Session.SetString("Login", "true");
                     return RedirectToAction("Index", "Home");
                 }
                 else
