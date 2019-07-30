@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Database;
 using SistemaGerProjetos.Models;
 using System;
@@ -9,6 +10,7 @@ using X.PagedList;
 
 namespace SistemaGerProjetos.Controllers
 {
+    [Authorize]
     public class CategoriaController : Controller
     {
         private DatabaseContext _db;
@@ -18,6 +20,7 @@ namespace SistemaGerProjetos.Controllers
             _db = db;
         }
         //Listar todas as palavras do banco de dados
+        [Authorize(Roles = "Admin")]
         public IActionResult Index(int? page)
         {
 
@@ -31,12 +34,14 @@ namespace SistemaGerProjetos.Controllers
         }
 
         //CRUD - CREATE, READ, UPDATE e DELETE
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Cadastrar()
         {
             return View(new Categoria());
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar([FromForm]Categoria categoria)
         {
@@ -51,6 +56,7 @@ namespace SistemaGerProjetos.Controllers
             return View(categoria);
         }
         //-------------------------------------------------------------
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Atualizar(int Id)
         {
@@ -58,6 +64,7 @@ namespace SistemaGerProjetos.Controllers
             return View("Cadastrar", categoria);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Atualizar([FromForm]Categoria categoria)
         {
@@ -72,7 +79,7 @@ namespace SistemaGerProjetos.Controllers
             return View("Cadastrar", categoria);
         }
         //--------------------------------------------------------------
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Excluir(int Id)
         {

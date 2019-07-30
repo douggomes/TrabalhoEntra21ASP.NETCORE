@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Database;
 using SistemaGerProjetos.Library;
 using SistemaGerProjetos.Models;
@@ -10,7 +11,7 @@ using X.PagedList;
 
 namespace SistemaGerProjetos.Controllers
 {
-    [Login]
+    [Authorize]
     public class EstadoController : Controller
     {
         private DatabaseContext _db;
@@ -21,6 +22,7 @@ namespace SistemaGerProjetos.Controllers
         }
 
         //Listar todas as palavras do banco de dados
+        [Authorize(Roles = "Admin")]
         public IActionResult Index(int? page)
         {
             var pageNumber = page ?? 1;
@@ -32,12 +34,14 @@ namespace SistemaGerProjetos.Controllers
         }
 
         //CRUD - CREATE, READ, UPDATE e DELETE
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Cadastrar()
         {
             return View(new Estado());
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar([FromForm]Estado estado)
         {
@@ -52,6 +56,8 @@ namespace SistemaGerProjetos.Controllers
             return View(estado);
         }
         //-------------------------------------------------------------
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Atualizar(int Id)
         {
@@ -59,6 +65,7 @@ namespace SistemaGerProjetos.Controllers
             return View("Cadastrar", estado);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Atualizar([FromForm]Estado estado)
         {
@@ -74,6 +81,7 @@ namespace SistemaGerProjetos.Controllers
         }
         //--------------------------------------------------------------
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Excluir(int Id)
         {

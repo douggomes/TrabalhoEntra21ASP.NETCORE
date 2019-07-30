@@ -22,5 +22,7 @@ namespace SistemaGerProjetos.Models
         [Required(ErrorMessage = "O campo 'Senha' é obrigatório!")]
         [MaxLength(50, ErrorMessage = "O campo 'Senha' deve conter no máximo 50 caracteres!")]
         public string Senha { get; set; }
+
+        public string Role { get; set; }
     }
 }

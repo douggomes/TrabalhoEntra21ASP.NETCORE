@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Database;
@@ -18,6 +22,7 @@ namespace SistemaGerProjetos.Controllers
             _db = db;
         }
 
+        [Authorize(Roles ="Admin")]
         public IActionResult ListaUsuarios(int? page)
         {
             var pageNumber = page ?? 1;
@@ -44,10 +49,34 @@ namespace SistemaGerProjetos.Controllers
                     x.Login,
                     x.Senha
                 })
-                .Where(x => x.Login == login && x.Senha == senha);
+                .Where(x => x.Login == login && x.Senha == senha).ToList();
 
-                if (usuarioExiste != null)
+
+                if (usuarioExiste.Count == 1)
                 {
+                    Usuario usuario = new Usuario();
+                    usuario.Login = login;
+
+                    var roleUsuario = _db.Usuarios.Where(x => x.Login == login && x.Role == "Admin").Select(y => y.Role).ToList();
+
+                    if(roleUsuario.Count == 1)
+                    {
+                        usuario.Role = "Admin";
+                    }
+                    else
+                    {
+                        usuario.Role = "User";
+                    }
+
+                    var identity = new ClaimsIdentity(new[] {
+                    new Claim(ClaimTypes.Name, usuario.Login),
+                    new Claim(ClaimTypes.Role, usuario.Role)
+                    }, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    var principal = new ClaimsPrincipal(identity);
+
+                    var logar = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
                     HttpContext.Session.SetString("Login", "true");
                     return RedirectToAction("Index", "Home");
                 }
@@ -134,6 +163,8 @@ namespace SistemaGerProjetos.Controllers
 
         public ActionResult Logout()
         {
+            var login = HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
             HttpContext.Session.Clear();
 
             return RedirectToAction("Login", "Usuario");

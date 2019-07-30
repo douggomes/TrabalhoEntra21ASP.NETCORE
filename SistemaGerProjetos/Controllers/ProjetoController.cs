@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Database;
 using SistemaGerProjetos.Models;
 using System;
@@ -9,6 +10,7 @@ using X.PagedList;
 
 namespace SistemaGerProjetos.Controllers
 {
+    [Authorize]
     public class ProjetoController : Controller
     {
         private DatabaseContext _db;
@@ -32,6 +34,7 @@ namespace SistemaGerProjetos.Controllers
         }
 
         //CRUD - CREATE, READ, UPDATE e DELETE
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Cadastrar()
         {
@@ -41,6 +44,7 @@ namespace SistemaGerProjetos.Controllers
             return View(new Projeto());
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar([FromForm]Projeto projeto)
         {
@@ -55,6 +59,7 @@ namespace SistemaGerProjetos.Controllers
             return View(projeto);
         }
         //-------------------------------------------------------------
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Atualizar(int Id)
         {
@@ -68,6 +73,7 @@ namespace SistemaGerProjetos.Controllers
             return View("Cadastrar", projeto);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Atualizar([FromForm]Projeto projeto)
         {
@@ -86,6 +92,7 @@ namespace SistemaGerProjetos.Controllers
         }
         //--------------------------------------------------------------
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Excluir(int Id)
         {

@@ -172,3 +172,9 @@ C:\Users\User\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj
 C:\Users\User\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\SistemaGerProjetos.RazorTargetAssemblyInfo.cs
 C:\Users\User\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\SistemaGerProjetos.Views.pdb
 C:\Users\User\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\SistemaGerProjetos.csproj.CopyComplete
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Cadastrar.g.cshtml.cs
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Index.g.cshtml.cs
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Projeto\Cadastrar.g.cshtml.cs
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Projeto\Index.g.cshtml.cs
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Tarefa\Cadastrar.g.cshtml.cs
+C:\Users\T-Gamer\Documents\GitHub\TrabalhoEntra21ASP.NETCORE\SistemaGerProjetos\obj\Debug\netcoreapp2.1\Razor\Views\Tarefa\Index.g.cshtml.cs

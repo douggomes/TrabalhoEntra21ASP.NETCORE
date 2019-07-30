@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +26,15 @@ namespace SistemaGerProjetos
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SistemaGerProjetos;Integrated Security=True;");
             });
 
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.  
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
             services.AddDistributedMemoryCache();
             services.AddSession();
         }
@@ -37,8 +47,9 @@ namespace SistemaGerProjetos
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCookiePolicy();
+            app.UseAuthentication();
             app.UseSession();
-
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
 
