@@ -7,6 +7,8 @@
     ViewBag.Title = "Cadastrar-se";
 }
 
+<p class="h3 mt-3">Cadastro de Usuários</p>
+
 <div class="container">
     <form method="post">
         <div class="form-group">
@@ -27,7 +29,7 @@
             @Html.ValidationMessage("senha")
         </div>
 
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
     </form>
 
     @if (ViewBag.MensagemErro != null)

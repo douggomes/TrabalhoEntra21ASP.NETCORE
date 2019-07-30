@@ -9,6 +9,9 @@
     ViewBag.Title = "Cadastro de Cidades";
 }
 
+
+<p class="h3 mt-3">Cadastro de Cidades</p>
+
 <div class="container">
     <form method="post">
         <input type="hidden" name="id" value="@Model.Id" />
@@ -45,7 +48,7 @@
             <input type="text" name="numeroHabitantes" value="@Model.NumeroHabitantes" class="form-control" id="numeroHabitantes" placeholder="Informe o número de habitantes">
             @Html.ValidationMessage("numeroHabitantes")
         </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
     </form>
     @ViewBag.Mensagem
 </div>

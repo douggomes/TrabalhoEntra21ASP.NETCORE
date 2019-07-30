@@ -7,6 +7,8 @@
     ViewBag.Title = "Cadastro de Categorias";
 }
 
+<p class="h3 mt-3">Cadastro de Categorias</p>
+
 <div class="container">
     <form method="post">
         <input type="hidden" name="id" value="@Model.Id" />
@@ -15,7 +17,7 @@
             <input type="text" name="nomecategoria" value="@Model.NomeCategoria" class="form-control" id="nome" placeholder="Digite o nome da categoria">
             @Html.ValidationMessage("nome")
         </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
     </form>
     @ViewBag.Mensagem
 </div>

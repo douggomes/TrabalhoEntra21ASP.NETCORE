@@ -7,6 +7,8 @@
     ViewBag.Title = "Cadastro de Clientes";
 }
 
+<p class="h3 mt-3">Cadastro de Clientes</p>
+
 <div class="container">
     <form method="post">
         <input type="hidden" name="id" value="@Model.Id" />
@@ -45,7 +47,7 @@
             <input type="text" name="cep" value="@Model.Cep" class="form-control" id="cep" placeholder="Digite o CEP">
             @Html.ValidationMessage("cep")
         </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
     </form>
     @ViewBag.Mensagem
 </div>
