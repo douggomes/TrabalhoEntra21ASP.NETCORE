@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "c307494553b8431ae46dce87d0677e8d7f9c0205"
+    "signature": "407ac16df2e8f90fe841b84263dac3946e6aeee0"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "SistemaGerProjetos/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "5.2.7",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.EntityFrameworkCore": "2.1.1",
@@ -47,6 +48,35 @@
         }
       },
       "jQuery/3.0.0": {},
+      "Microsoft.AspNet.WebApi.Client/5.2.7": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.7": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.7"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Mvc.Abstractions/2.1.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Routing.Abstractions": "2.1.1",
@@ -507,6 +537,21 @@
           "Microsoft.NETCore.Platforms": "2.1.0"
         }
       },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.1.20722"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
       "NuGet.Frameworks/4.7.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3"
@@ -702,16 +747,6 @@
           "lib/netstandard2.0/X.PagedList.Mvc.Core.dll": {}
         }
       },
-      "Microsoft.AspNet.WebApi.Client/5.2.6": {
-        "dependencies": {
-          "Newtonsoft.Json": "11.0.2",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.AspNetCore/2.1.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics": "2.1.1",
@@ -751,7 +786,7 @@
       },
       "Microsoft.AspNetCore.App/2.1.1": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.6",
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.AspNetCore.Antiforgery": "2.1.1",
           "Microsoft.AspNetCore.Authentication": "2.1.1",
@@ -2501,16 +2536,6 @@
         },
         "compileOnly": true
       },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "dependencies": {
-          "NETStandard.Library": "2.0.3",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "compileOnly": true
-      },
       "Remotion.Linq/2.2.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -3553,6 +3578,20 @@
       "path": "jquery/3.0.0",
       "hashPath": "jquery.3.0.0.nupkg.sha512"
     },
+    "Microsoft.AspNet.WebApi.Client/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
+      "path": "microsoft.aspnet.webapi.client/5.2.7",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gM2QzApnHdy1FbKUJ/ROGJSm69P2G+HMoVd/t5Vq1O/zZ5TI4IKC9PX6nUfRt/NHgebZOIWHpB4/4K4inuy4yQ==",
+      "path": "microsoft.aspnet.webapi.core/5.2.7",
+      "hashPath": "microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Mvc.Abstractions/2.1.2": {
       "type": "package",
       "serviceable": true,
@@ -3728,6 +3767,13 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+    "Newtonsoft.Json.Bson/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
+      "path": "newtonsoft.json.bson/1.0.1",
+      "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -3811,13 +3857,6 @@
       "sha512": "sha512-5fmLfdbnoIlitMdrXQ+a99xQinKNTq6HYo2GrML9MnM8dd99QqDWLzPWG7nBlki1dZIp4vO0f5JjVS1/JB2bJw==",
       "path": "x.pagedlist.mvc.core/7.6.0",
       "hashPath": "x.pagedlist.mvc.core.7.6.0.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Client/5.2.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
-      "path": "microsoft.aspnet.webapi.client/5.2.6",
-      "hashPath": "microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.1.1": {
       "type": "package",
@@ -4875,13 +4914,6 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
-    },
-    "Newtonsoft.Json.Bson/1.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
-      "path": "newtonsoft.json.bson/1.0.1",
-      "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
     },
     "Remotion.Linq/2.2.0": {
       "type": "package",
