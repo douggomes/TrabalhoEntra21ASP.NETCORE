@@ -12741,11 +12741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gomes\\Documents\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
+      "projectUniqueName": "C:\\Users\\gomes\\Downloads\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
       "projectName": "SistemaGerProjetos",
-      "projectPath": "C:\\Users\\gomes\\Documents\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
+      "projectPath": "C:\\Users\\gomes\\Downloads\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
       "packagesPath": "C:\\Users\\gomes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gomes\\Documents\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\obj\\",
+      "outputPath": "C:\\Users\\gomes\\Downloads\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
