@@ -9,11 +9,13 @@ namespace SistemaGerProjetos.Database
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Projeto> Projetos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Tarefa> Tarefas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {

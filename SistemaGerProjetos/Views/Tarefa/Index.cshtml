@@ -1,0 +1,58 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+
+@model X.PagedList.IPagedList<SistemaGerProjetos.Models.Tarefa>
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Lista de Tarefas";
+}
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Mensagem"]
+    </div>
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" type="text/css" />
+
+<a href="~/tarefa/cadastrar" class="btn btn-primary">Cadastrar</a>
+<span><b>Total de Registros:</b>@Model.TotalItemCount</span>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Título da tarefa</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Projeto Designado</th>
+            <th scope="col">Responsável pela tarefa</th>
+            <th scope="col">Duração</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarefa in Model)
+        {
+            <tr>
+                <td>@tarefa.Id</td>
+                <td>@tarefa.TituloTarefa</td>
+                <td>@tarefa.Categoria</td>
+                <td>@tarefa.NomeProjetoTarefa</td>
+                <td>@tarefa.NomeUsuarioResponsavel</td>
+                <td>@tarefa.DuracaoTarefa</td>
+                <td>@tarefa.DescricaoTarefa</td>
+                <td>
+                    <a href="/estado/atualizar/@tarefa.Id" class="btn btn-primary">Editar</a>
+                    <a href="/estado/excluir/@tarefa.Id" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

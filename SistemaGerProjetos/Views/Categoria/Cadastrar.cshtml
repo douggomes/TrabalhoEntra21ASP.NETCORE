@@ -1,0 +1,21 @@
+﻿@model SistemaGerProjetos.Models.Categoria;
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Cadastro de Categorias";
+}
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="nomecategoria">Nome da Categoria</label>
+            <input type="text" name="nomecategoria" value="@Model.NomeCategoria" class="form-control" id="nomecategoria" placeholder="Digite o nome da categoria">
+            @Html.ValidationMessage("nomecategoria")
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+    @ViewBag.Mensagem
+</div>

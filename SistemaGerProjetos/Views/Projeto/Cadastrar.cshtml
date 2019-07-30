@@ -1,0 +1,50 @@
+﻿@model SistemaGerProjetos.Models.Projeto;
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Cadastro de Projetos";
+}
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="nomeprojeto">Nome</label>
+            <input type="text" name="nomeprojeto" value="@Model.NomeProjeto" class="form-control" id="nomeprojeto" placeholder="Digite o nome do projeto">
+            @Html.ValidationMessage("nomeprojeto")
+        </div>
+        <div class="form-group">
+            <label for="nomeclienteprojeto">Nome do Cliente</label>
+            <select name="nomeclienteprojeto" class="form-control">
+                <option disabled="disabled" selected="selected">Selecione um cliente</option>
+                @if (ViewBag.AtualizarClienteProjeto != null)
+                {
+                    @foreach (var atualizar in ViewBag.AtualizarClienteProjeto)
+                    {
+                        <option value="@atualizar" selected>@atualizar</option>
+                    }
+                }
+
+                @foreach (var cliente in ViewBag.Cliente)
+                {
+                    <option value="@cliente.Nome">@cliente.Nome</option>
+                }
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="datacriacao">Data de Criação do Projeto</label>
+            <input type="date" name="datacriacao" value="@Model.DataCriacao" class="form-control" id="datacriacao">
+            @Html.ValidationMessage("datacriacao")
+        </div>
+        <div class="form-group">
+            <label for="datafinalizacao">Data de Finalização do Projeto</label>
+            <input type="date" name="datafinalizacao" value="@Model.DataFinalizacao" class="form-control" id="datafinalizacao">
+            @Html.ValidationMessage("datafinalizacao")
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+    @ViewBag.Mensagem
+</div>

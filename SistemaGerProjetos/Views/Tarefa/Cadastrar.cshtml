@@ -1,0 +1,100 @@
+﻿@model SistemaGerProjetos.Models.Tarefa;
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Cadastro de Tarefas";
+}
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="titulotarefa">Título da tarefa</label>
+            <input type="text" name="titulotarefa" value="@Model.TituloTarefa" class="form-control" id="titulotarefa" placeholder="Digite o título da tarefa">
+            @Html.ValidationMessage("titulotarefa")
+        </div>
+        <div class="form-group">
+            <label for="nomecategoriatarefa">Categoria</label>
+            <select name="nomecategoriatarefa" class="form-control">
+                <option disabled="disabled" selected="selected">Selecione uma categoria</option>
+
+                @if (ViewBag.NomeEstadoDB != null)
+                {
+
+                    @foreach (var NomeCategoria in ViewBag.NomeCategoriaDB)
+                    {
+                        <option value="@NomeCategoria" selected>@NomeCategoria</option>
+                    }
+
+                }
+
+                @foreach (var categoria in ViewBag.Categoria)
+                {
+                    <option value="@categoria.NomeCategoria">@categoria.NomeCategoria</option>
+                }
+
+            </select>
+            @Html.ValidationMessage("nomecategoriatarefa")
+        </div>
+        <div class="form-group">
+            <label for="nomeprojetotarefa">Projeto</label>
+            <select name="nomeprojetotarefa" class="form-control">
+                <option disabled="disabled" selected="selected">Selecione um projeto</option>
+
+                @if (ViewBag.NomeProjetoDB != null)
+                {
+
+                    @foreach (var NomeProjeto in ViewBag.NomeProjetoDB)
+                    {
+                        <option value="@NomeProjeto" selected>@NomeProjeto</option>
+                    }
+
+                }
+
+                @foreach (var projeto in ViewBag.Projeto)
+                {
+                    <option value="@projeto.NomeProjeto">@projeto.NomeProjeto</option>
+                }
+
+            </select>
+            @Html.ValidationMessage("nomeprojetotarefa")
+        </div>
+        <div class="form-group">
+            <label for="nomeusuarioresponsavel">Responsável</label>
+            <select name="nomeusuarioresponsavel" class="form-control">
+                <option disabled="disabled" selected="selected">Selecione o responsável</option>
+
+                @if (ViewBag.NomeUsuarioDB != null)
+                {
+
+                    @foreach (var NomeUsuario in ViewBag.NomeUsuarioDB)
+                    {
+                        <option value="@NomeUsuario" selected>@NomeUsuario</option>
+                    }
+
+                }
+
+                @foreach (var usuario in ViewBag.Usuario)
+                {
+                    <option value="@usuario.NomeUsuario">@usuario.NomeUsuario</option>
+                }
+
+            </select>
+            @Html.ValidationMessage("nomeusuarioresponsavel")
+        </div>
+        <div class="form-group">
+            <label for="duracaotarefa">Prazo</label>
+            <input type="date" name="duracaotarefa" value="@Model.DuracaoTarefa" class="form-control" id="duracaotarefa">
+            @Html.ValidationMessage("duracaotarefa")
+        </div>
+        <div class="form-group">
+            <label for="descricaotarefa">Descrição</label>
+            <input type="text" name="descricaotarefa" value="@Model.DescricaoTarefa" class="form-control" id="descricaotarefa" >
+            @Html.ValidationMessage("descricaotarefa")
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+    @ViewBag.Mensagem
+</div>

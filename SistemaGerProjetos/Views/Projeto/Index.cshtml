@@ -1,0 +1,54 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+
+@model X.PagedList.IPagedList<SistemaGerProjetos.Models.Projeto>
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Lista de Projetos";
+}
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Mensagem"]
+    </div>
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" type="text/css" />
+
+<a href="~/projeto/cadastrar" class="btn btn-primary">Cadastrar</a>
+<span><b>Total de Registros:</b>@Model.TotalItemCount</span>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nome do Projeto</th>
+            <th scope="col">Nome do Cliente</th>
+            <th scope="col">Data de criação do projeto</th>
+            <th scope="col">Data de finalização do projeto</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var projeto in Model)
+        {
+            <tr>
+                <td>@projeto.Id</td>
+                <td>@projeto.NomeProjeto</td>
+                <td>@projeto.NomeClienteProjeto</td>
+                <td>@projeto.DataCriacao</td>
+                <td>@projeto.DataFinalizacao</td>
+                <td>
+                    <a href="/projeto/atualizar/@projeto.Id" class="btn btn-primary">Editar</a>
+                    <a href="/projeto/excluir/@projeto.Id" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

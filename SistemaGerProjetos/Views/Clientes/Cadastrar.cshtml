@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <label for="dataNascimento">Data de Nascimento</label>
-            <input type="text" name="dataNascimento" value="@Model.DataNascimento" class="form-control" id="dataNascimento" placeholder="@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year">
+            <input type="date" name="dataNascimento" value="@Model.DataNascimento" class="form-control" id="dataNascimento">
             @Html.ValidationMessage("dataNascimento")
         </div>
         <div class="form-group">

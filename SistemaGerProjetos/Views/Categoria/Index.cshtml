@@ -1,0 +1,48 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+
+@model X.PagedList.IPagedList<SistemaGerProjetos.Models.Categoria>
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Lista de Categorias";
+}
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Mensagem"]
+    </div>
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" type="text/css" />
+
+<a href="~/categoria/cadastrar" class="btn btn-primary">Cadastrar</a>
+<span><b>Total de Registros:</b>@Model.TotalItemCount</span>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nome da Categoria</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in Model)
+        {
+            <tr>
+                <td>@categoria.Id</td>
+                <td>@categoria.NomeCategoria</td>
+                <td>
+                    <a href="/estado/atualizar/@categoria.Id" class="btn btn-primary">Editar</a>
+                    <a href="/estado/excluir/@categoria.Id" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

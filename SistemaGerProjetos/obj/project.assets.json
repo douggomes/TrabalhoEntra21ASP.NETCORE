@@ -12735,23 +12735,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alunos\\.nuget\\packages\\": {},
+    "C:\\Users\\gomes\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "T:\\Documentos\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
+      "projectUniqueName": "C:\\Users\\gomes\\Documents\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
       "projectName": "SistemaGerProjetos",
-      "projectPath": "T:\\Documentos\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
-      "packagesPath": "C:\\Users\\Alunos\\.nuget\\packages\\",
-      "outputPath": "T:\\Documentos\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\obj\\",
+      "projectPath": "C:\\Users\\gomes\\Documents\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\SistemaGerProjetos.csproj",
+      "packagesPath": "C:\\Users\\gomes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gomes\\Documents\\GitHub\\TrabalhoEntra21ASP.NETCORE\\SistemaGerProjetos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Alunos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

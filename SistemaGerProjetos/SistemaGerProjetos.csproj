@@ -7,7 +7,6 @@
   <ItemGroup>
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Contato\" />
-    <Folder Include="Views\Tarefa\" />
     <Folder Include="Views\Projeto\" />
   </ItemGroup>
 
@@ -19,6 +18,15 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="7.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Tarefa\Cadastrar.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Tarefa\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>
