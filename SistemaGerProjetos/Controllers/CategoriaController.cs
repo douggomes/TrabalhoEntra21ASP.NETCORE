@@ -41,7 +41,7 @@ namespace SistemaGerProjetos.Controllers
             return View(new Categoria());
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar([FromForm]Categoria categoria)
         {

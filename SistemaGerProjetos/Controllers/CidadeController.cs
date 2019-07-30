@@ -45,7 +45,7 @@ namespace SistemaGerProjetos.Controllers
             ViewBag.Estado = estadoDb;
             return View(new Cidade());
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar([FromForm]Cidade cidade)
         {

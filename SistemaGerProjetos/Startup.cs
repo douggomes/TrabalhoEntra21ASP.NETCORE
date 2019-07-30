@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.Extensions.DependencyInjection;
 using SistemaGerProjetos.Database;
 
@@ -23,7 +24,8 @@ namespace SistemaGerProjetos
                 //Providers - Bibliotecas que efetuam conexão com a grande maioria dos BD's do mercado.
                 //https://docs.microsoft.com/pt-br/ef/core/providers/
 
-                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SistemaGerProjetos;Integrated Security=True;");
+                //options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SistemaGerProjetos;Integrated Security=True;");
+                options.UseSqlite("data source= Database\\SisteGerProj.db");
             });
 
             services.Configure<CookiePolicyOptions>(options =>

@@ -23,6 +23,7 @@ namespace SistemaGerProjetos.Controllers
 
         //Listar todas as palavras do banco de dados
         [Authorize(Roles = "Admin")]
+        //[Authorize]
         public IActionResult Index(int? page)
         {
             var pageNumber = page ?? 1;
@@ -41,7 +42,7 @@ namespace SistemaGerProjetos.Controllers
             return View(new Estado());
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar([FromForm]Estado estado)
         {
@@ -57,7 +58,7 @@ namespace SistemaGerProjetos.Controllers
         }
         //-------------------------------------------------------------
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Atualizar(int Id)
         {
