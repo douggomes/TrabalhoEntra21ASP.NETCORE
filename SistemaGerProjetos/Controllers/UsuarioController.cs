@@ -156,7 +156,7 @@ namespace SistemaGerProjetos.Controllers
             _db.Usuarios.Remove(usuario);
             _db.SaveChanges();
 
-            TempData["Mensagem"] = "O Estado '" + usuario.NomeUsuario + "' foi removido com sucesso!";
+            TempData["Mensagem"] = "O usuario '" + usuario.NomeUsuario + "' foi removido com sucesso!";
 
             return RedirectToAction("ListaUsuarios");
         }

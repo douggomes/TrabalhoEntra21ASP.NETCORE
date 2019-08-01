@@ -102,7 +102,7 @@ using X.PagedList;
             WriteLiteral("\r\n    <p class=\"h3 mt-3\">Lista de Usuários</p>\r\n\r\n");
             EndContext();
             BeginContext(393, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a7f42caa9fce44bb9d10aaff1aaea268", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a5e5f443b3b045a3be186a9a55065b1c", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -122,7 +122,7 @@ using X.PagedList;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(465, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d33769c806649a28f76411631b0c15e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a05ac512e2ab407d95814de811d68e4f", async() => {
                 BeginContext(518, 9, true);
                 WriteLiteral("Cadastrar");
                 EndContext();
