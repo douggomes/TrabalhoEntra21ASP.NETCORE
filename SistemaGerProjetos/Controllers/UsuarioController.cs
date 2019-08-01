@@ -77,7 +77,7 @@ namespace SistemaGerProjetos.Controllers
 
                     var logar = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                    //HttpContext.Session.SetString("Login", "true");
+                    HttpContext.Session.SetString("Login", "true");
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -95,7 +95,7 @@ namespace SistemaGerProjetos.Controllers
         [HttpGet]
         public IActionResult Cadastro()
         {
-            return View();
+            return View(new Usuario());
         }
 
         [HttpPost]
@@ -110,7 +110,7 @@ namespace SistemaGerProjetos.Controllers
 
                     string login = HttpContext.Session.GetString("Login");
 
-                    TempData["Mensagem"] = "O usuário '" + usuario.NomeUsuario + "' foi cadastrado com sucesso!";
+                    TempData["MensagemCadastroUsuario"] = "O usuário '" + usuario.NomeUsuario + "' foi cadastrado com sucesso!";
 
                     if (login == null)
                     {
@@ -132,7 +132,7 @@ namespace SistemaGerProjetos.Controllers
         public IActionResult Atualizar(int Id)
         {
             Usuario usuario = _db.Usuarios.Find(Id);
-            return View("Cadastrar", usuario);
+            return View("Cadastro", usuario);
         }
 
         [HttpPost]
@@ -144,9 +144,9 @@ namespace SistemaGerProjetos.Controllers
                 _db.SaveChanges();
 
                 TempData["Mensagem"] = "O usuario '" + usuario.NomeUsuario + "' foi alterado com sucesso!";
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaUsuarios");
             }
-            return View("Cadastrar", usuario);
+            return View("Cadastro", usuario);
         }
 
         [HttpGet]
@@ -156,9 +156,9 @@ namespace SistemaGerProjetos.Controllers
             _db.Usuarios.Remove(usuario);
             _db.SaveChanges();
 
-            TempData["Mensagem"] = "O Estado '" + usuario.NomeUsuario + "' foi removido com sucesso!";
+            TempData["Mensagem"] = "O usuario '" + usuario.NomeUsuario + "' foi removido com sucesso!";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListaUsuarios");
         }
 
         public ActionResult Logout()

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SistemaGerProjetos.Library;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGerProjetos.Controllers
 {
-    [Authorize]
+    [Login]
     public class HomeController : Controller
     {
         public ActionResult Index()
